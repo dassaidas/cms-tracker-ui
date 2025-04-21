@@ -1,0 +1,137 @@
+/* Sidebar container */
+.sidebar {
+  width: 220px;
+  background-color: #1f2937;
+  color: #fff;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar:not(.open) {
+  transform: translateX(-100%);
+}
+
+@media (min-width: 769px) {
+  .sidebar {
+    transform: translateX(0) !important;
+  }
+}
+
+.sidebar-header {
+  font-size: 1.5rem;
+  padding: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #374151;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.sidebar-role-badge {
+  padding: 0 16px 10px;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #10b981;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sidebar-content {
+  padding: 10px 0;
+}
+
+.sidebar-loading {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Menu styling */
+.menu-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  color: #d1d5db;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.menu-link:hover {
+  background-color: #374151;
+}
+
+.menu-link.active,
+.menu-item.active-parent > .menu-link {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.menu-icon {
+  min-width: 20px;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon.rotated {
+  transform: rotate(90deg);
+}
+
+/* Submenu animation */
+.submenu-wrapper {
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.submenu {
+  padding-left: 20px;
+}
+
+/* Footer */
+.sidebar-footer {
+  margin-top: auto;
+  padding: 10px 20px;
+  border-top: 1px solid #374151;
+}
+
+.logout-button {
+  width: 100%;
+  background-color: #ef4444;
+  border: none;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.logout-button:hover {
+  background-color: #dc2626;
+}
